@@ -1,0 +1,114 @@
+body {
+    background-color: #f0e68c; /* Light yellow background */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    color: #ff6347; /* Tomato color */
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.birthday-cake {
+    width: 300px; /* Adjust the size as needed */
+    align-content: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.celebrate-button {
+    background-color: #ff6347; /* Tomato color */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: scale(50px);
+    box-shadow: 0.3s;
+}
+
+.celebrate-button:hover {
+    background-color: #84fa07; /* Darker tomato color */
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgb(0, 0, 0);
+}
+
+.celebrate-button:active{
+    transform: scale(0.9);
+}
+
+.celebrate-button::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    background: radial-gradient(circle,rgba(255, 255, 255, 0.6),transparent);
+    opacity: 0;
+    transform: translate(-50%,-50%),scale(0);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: none;
+}
+
+.celebrate-button:active::after{
+    animation: celebration 0.6s ease-out;
+}
+
+.clickable-area {
+    text-align: center;
+    font-size: 24px;
+    color: #880e4f;
+    cursor: pointer;
+    user-select: none;
+}
+
+.kiss {
+    position: absolute;
+    font-size: 30px;
+    color: red;
+    animation: fadeAndRise 1.5s ease forwards;
+}
+
+@keyframes fadeAndRise {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes celebration {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    scale(0);
+    }
+    80% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%);
+    scale:(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%);
+    scale:(1.2);
+    }
+}
